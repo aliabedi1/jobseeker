@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
-            $table->text('link');
+            $table->text('link')->unique();
+            $table->string('experience')->nullable();
+            $table->string('salary')->nullable();
             $table->boolean('is_used')->default(false);
             $table->boolean('status')->default(true);
-            $table->string('salary')->nullable();
             $table->timestamps();
         });
     }
