@@ -113,4 +113,13 @@ class HomeController extends Controller
             }
         }
     }
+
+    public function seen(Link $link)
+    {
+        $link->update([
+            'is_used'=> 1
+        ]);
+        return redirect()->to($link->link);
+
+    }
 }
