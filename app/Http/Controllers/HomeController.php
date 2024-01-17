@@ -10,8 +10,18 @@ class HomeController extends Controller
 {
     public function index()
     {
+        return view();
+    }
+
+    public function renew()
+    {
+        $this->jobinja();
+        return redirect('home');
+    }
+
+    private function jobinja()
+    {
         set_time_limit(1000000);
-        $jobAdLinks = collect();
 
         $baseurl = 'https://jobinja.ir/jobs?&b=&filters%5Bjob_categories%5D%5B0%5D=&filters%5Bkeywords%5D%5B0%5D=laravel&filters%5Blocations%5D%5B0%5D=%D8%AA%D9%87%D8%B1%D8%A7%D9%86&page=';
         for ($pageNumber = 1; $pageNumber < 9; $pageNumber++) {
