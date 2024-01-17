@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home',[HomeController::class, 'index'])->name('home');
 Route::get('/renew',[HomeController::class, 'renew'])->name('renew');
+Route::get('/seen/{link}',[HomeController::class, 'seen'])->name('seen');
+
