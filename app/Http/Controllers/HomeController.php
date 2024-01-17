@@ -10,7 +10,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view();
+        return view('home',[
+            'data' => Link::query()
+                ->orderBy('is_used')
+                ->where('status',1)
+                ->get()
+        ]);
     }
 
     public function renew()
