@@ -60,7 +60,7 @@
 
     <table dir="rtl" class="table table-hover table-striped tablebg">
         <thead>
-        <tr>
+        <tr class="text-center">
             <th scope="col">#</th>
             <th scope="col">Salary</th>
             <th scope="col">Experience</th>
@@ -69,7 +69,7 @@
         </thead>
         <tbody>
         @foreach($data as $row)
-            <tr @if($row->is_used == 1) class="bg-danger" @endif>
+            <tr class="@if($row->is_used == 1) bg-danger @endif text-center">
                 <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $row->salary }}</td>
                 <td>{{ $row->experience }}</td>
